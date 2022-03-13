@@ -1,10 +1,11 @@
 // material
 import { alpha, styled } from '@mui/material/styles';
 import { Card, Typography } from '@mui/material';
+import { Thermostat } from '@mui/icons-material';
+
 // utils
 import { fShortenNumber } from '../../../utils/formatNumber';
 // component
-import Iconify from '../../../components/Iconify';
 
 // ----------------------------------------------------------------------
 
@@ -40,11 +41,11 @@ export default function AppWeeklySales() {
   return (
     <RootStyle>
       <IconWrapperStyle>
-        <Iconify icon="ant-design:android-filled" width={24} height={24} />
+        <Thermostat />
       </IconWrapperStyle>
       <Typography variant="h3">{fShortenNumber(TOTAL)}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Weekly Sales
+        Thermostat{' '}
       </Typography>
     </RootStyle>
   );

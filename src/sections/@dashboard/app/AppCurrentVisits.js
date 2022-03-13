@@ -1,9 +1,11 @@
+import react, { useState } from 'react';
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 // material
 import { useTheme, styled } from '@mui/material/styles';
 import { Card, CardHeader } from '@mui/material';
-// utils
+import CircularSlider from '@fseehawer/react-circular-slider';
+
 import { fNumber } from '../../../utils/formatNumber';
 //
 import { BaseOptionChart } from '../../../components/charts';
@@ -34,6 +36,8 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
 const CHART_DATA = [4344, 5435, 1443, 4443];
 
 export default function AppCurrentVisits() {
+  const [temprature, setTemprature] = useState('0°C');
+
   const theme = useTheme();
 
   const chartOptions = merge(BaseOptionChart(), {
@@ -63,9 +67,16 @@ export default function AppCurrentVisits() {
 
   return (
     <Card>
-      <CardHeader title="Current Visits" />
+      <CardHeader title="Theromostat" />
       <ChartWrapperStyle dir="ltr">
-        <ReactApexChart type="pie" series={CHART_DATA} options={chartOptions} height={280} />
+        <CircularSlider
+          onChange={(value) => {
+            setTemprature(value);
+          }}
+          min={0}
+          max={70}
+          data={temprature}
+        />
       </ChartWrapperStyle>
     </Card>
   );
