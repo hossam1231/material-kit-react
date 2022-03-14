@@ -1,6 +1,10 @@
+import React from 'react';
+
 // material
 import { alpha, styled } from '@mui/material/styles';
 import { Card, Typography } from '@mui/material';
+import CircularSlider from 'react-circular-slider-svg';
+
 import { Thermostat } from '@mui/icons-material';
 
 // utils

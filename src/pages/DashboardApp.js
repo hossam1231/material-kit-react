@@ -49,41 +49,23 @@ export default function DashboardApp() {
             <AppBugReports />
             {/* key card */}
           {/* </Grid> */}
-
-          <Grid item xs={12} md={6} lg={8}>
-            {/* <AppWebsiteVisits /> */}
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            <AppCurrentVisits />
-            {/* Thermostat */}
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            {/* <AppConversionRates /> */}
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={4}>
-            {/* <AppCurrentSubject /> */}
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppNewsUpdate />
-            {/* property bills */}
-          </Grid>
-
           <Grid item xs={12} md={6} lg={4}>
             <AppOrderTimeline />
             {/* repairs */}
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
-            <AppTrafficBySite />
-            {/* businesses appliances */}
+            <AppCurrentVisits />
+            {/* Thermostat */}
+          </Grid>
+          <Grid item xs={12} md={6} lg={8}>
+            <AppNewsUpdate />
+            {/* property bills */}
           </Grid>
 
-          <Grid item xs={12} md={6} lg={8}>
-            {/* <AppTasks /> */}
+          <Grid item xs={12} md={6} lg={4}>
+            <AppTrafficBySite />
+            {/* businesses appliances */}
           </Grid>
         </Grid>
       </Container>

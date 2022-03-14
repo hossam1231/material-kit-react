@@ -1,4 +1,4 @@
-import react, { useState } from 'react';
+import React, { useState } from 'react';
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
 // material
@@ -9,6 +9,7 @@ import CircularSlider from '@fseehawer/react-circular-slider';
 import { fNumber } from '../../../utils/formatNumber';
 //
 import { BaseOptionChart } from '../../../components/charts';
+// import { Slider } from './AppWeeklySales';
 
 // ----------------------------------------------------------------------
 
@@ -68,16 +69,7 @@ export default function AppCurrentVisits() {
   return (
     <Card>
       <CardHeader title="Theromostat" />
-      <ChartWrapperStyle dir="ltr">
-        <CircularSlider
-          onChange={(value) => {
-            setTemprature(value);
-          }}
-          min={0}
-          max={70}
-          data={temprature}
-        />
-      </ChartWrapperStyle>
+      {/* <Slider /> */}
     </Card>
   );
 }

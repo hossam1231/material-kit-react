@@ -1,4 +1,9 @@
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import OpacityIcon from '@mui/icons-material/Opacity';
+import Bolt from '@mui/icons-material/Bolt';
+
 import { faker } from '@faker-js/faker';
+// fake data
 import PropTypes from 'prop-types';
 import { formatDistance } from 'date-fns';
 import { Link as RouterLink } from 'react-router-dom';
@@ -12,16 +17,30 @@ import Iconify from '../../../components/Iconify';
 
 // ----------------------------------------------------------------------
 
-const NEWS = [...Array(5)].map((_, index) => {
-  const setIndex = index + 1;
-  return {
-    title: faker.name.title(),
-    description: faker.lorem.paragraphs(),
-    image: mockImgCover(setIndex),
-    postedAt: faker.date.soon()
-  };
-});
-
+const NEWS = [
+  {
+    title: 'Water',
+    description: 'Anglian Water',
+    postedAt: faker.date.soon(),
+    icon: 'OpacityIcon'
+  },
+  {
+    title: 'Rent',
+    description: '45 East Park Parade',
+    postedAt: faker.date.soon(),
+    icon: 'MapsHomeWorkIcon'
+  },
+  {
+    title: 'Energy',
+    description: 'Scottish power',
+    postedAt: faker.date.soon(),
+    icon: 'Bolt'
+  }
+];
+//  title: faker.name.title(),
+//     description: faker.lorem.paragraphs(),
+//     image: mockImgCover(setIndex),
+//     postedAt: faker.date.soon()
 // ----------------------------------------------------------------------
 
 NewsItem.propTypes = {
@@ -29,16 +48,15 @@ NewsItem.propTypes = {
 };
 
 function NewsItem({ news }) {
-  const { image, title, description, postedAt } = news;
+  const { image, title, description, postedAt, icon } = news;
 
   return (
     <Stack direction="row" alignItems="center" spacing={2}>
-      <Box
-        component="img"
-        alt={title}
-        src={image}
-        sx={{ width: 48, height: 48, borderRadius: 1.5 }}
-      />
+      <Box alt={title} sx={{ width: 48, height: 48, borderRadius: 1.5 }}>
+        {icon === 'Bolt' && <Bolt />}
+        {icon === 'MapsHomeWorkIcon' && <MapsHomeWorkIcon />}
+        {icon === 'OpacityIcon' && <OpacityIcon />}
+      </Box>
       <Box sx={{ minWidth: 240 }}>
         <Link to="#" color="inherit" underline="hover" component={RouterLink}>
           <Typography variant="subtitle2" noWrap>
